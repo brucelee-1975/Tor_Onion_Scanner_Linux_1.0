@@ -73,20 +73,20 @@ Tor Fresh Onion Scanner is a powerful Python-based tool that monitors public cle
 ### Quick Install (One-Line)
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/yourusername/tor-scanner/main/install_linux.sh | bash
+curl -sSL https://raw.githubusercontent.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/refs/heads/main/install.sh | bash
 ```
 
 ### Standard Installation
 
 ```bash
 # 1. Download installer
-wget https://raw.githubusercontent.com/yourusername/tor-scanner/main/install_linux.sh
+wget https://raw.githubusercontent.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/refs/heads/main/install.sh
 
 # 2. Make executable
-chmod +x install_linux.sh
+chmod +x install.sh
 
 # 3. Run installer
-./install_linux.sh
+./install.sh
 ```
 
 The installer automatically:
@@ -123,7 +123,7 @@ pip install --user colorama lxml
 
 #### Then clone and run
 ```bash
-git clone https://github.com/yourusername/tor-scanner
+git clone https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0.git
 cd tor-scanner
 python3 tor_scanner.py
 ```
@@ -811,7 +811,7 @@ Contributions are welcome! Here's how:
 # 1. Fork the repository on GitHub
 
 # 2. Clone your fork
-git clone https://github.com/YOUR_USERNAME/tor-scanner
+git clone https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0.git
 cd tor-scanner
 
 # 3. Create feature branch
@@ -871,8 +871,8 @@ This software is provided for educational and research purposes only. Users are 
 
 1. **Read this README** thoroughly
 2. Check [Troubleshooting](#-troubleshooting) section
-3. Search [existing issues](https://github.com/yourusername/tor-scanner/issues)
-4. Create [new issue](https://github.com/yourusername/tor-scanner/issues/new) with:
+3. Search [existing issues](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/issues/1#issue-3492865332)
+4. Create [new issue](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/issues/new) with:
    - Linux distribution and version
    - Python version (`python3 --version`)
    - Complete error message
@@ -1009,6 +1009,6 @@ Typical performance on various systems:
 
 **⭐ Star this project if you find it useful!**
 
-[Report Bug](https://github.com/yourusername/tor-scanner/issues) · [Request Feature](https://github.com/yourusername/tor-scanner/issues) · [Documentation](https://github.com/yourusername/tor-scanner/wiki)
+[Report Bug](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/issues) · [Request Feature](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/issues) · [Documentation](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/wiki)
 
 </div>
