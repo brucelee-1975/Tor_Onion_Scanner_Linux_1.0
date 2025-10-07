@@ -12,7 +12,6 @@ import platform
 
 try:
     from colorama import init, Fore, Style
-    # Configurazione specifica per Linux
     if platform.system() == "Windows":
         from colorama import just_fix_windows_console
         just_fix_windows_console()
@@ -77,7 +76,6 @@ class Log:
 
 class SecurityAnalyzer:
     def __init__(self):
-        # Liste di indicatori di sicurezza
         self.malware_keywords = [
             'malware', 'trojan', 'virus', 'ransomware', 'keylogger', 'botnet',
             'exploit', 'backdoor', 'spyware', 'rat', 'stealer', 'cryptolocker',
@@ -95,7 +93,7 @@ class SecurityAnalyzer:
             'library', 'archive', 'blog', 'news', 'guide', 'help', 'support'
         ]
         
-        self.trusted_sources = ['Dark.fail', 'Tor.taxi']  # Fonti considerate affidabili
+        self.trusted_sources = ['Dark.fail', 'Tor.taxi'] 
 
     def analyze_safety(self, data):
         """
@@ -108,8 +106,7 @@ class SecurityAnalyzer:
         
         score = 0
         reasons = []
-        
-        # Analisi basata sul titolo
+
         for keyword in self.malware_keywords:
             if keyword in title:
                 score += 3
@@ -124,21 +121,16 @@ class SecurityAnalyzer:
             if keyword in title:
                 score -= 1
                 reasons.append(f"Keyword affidabile: {keyword}")
-        
-        # Analisi basata sulla fonte
+
         if source in self.trusted_sources:
             score -= 2
             reasons.append(f"Fonte affidabile: {source}")
-        
-        # Analisi basata sulla categoria
         if 'verified' in category:
             score -= 2
             reasons.append("Categoria verificata")
         elif 'market' in category:
             score += 1
             reasons.append("Mercato (rischio moderato)")
-        
-        # Determinazione del livello di sicurezza
         if score >= 3:
             return 'danger', reasons
         elif score >= 1:
@@ -198,20 +190,17 @@ class Files:
             file.write(f"Total: {len(onions)} | Safe: {safe_count} | "
                       f"Warning: {warning_count} | Danger: {danger_count}\n")
             file.write(f"{'='*80}\n\n")
-            
-            # Siti sicuri
+
             file.write(f"\n{'='*50}\nSAFE SITES\n{'='*50}\n")
             safe_sites = [addr for addr, data in onions.items() if data.get('security') == 'safe']
             for addr in sorted(safe_sites):
                 file.write(f"{addr}\n")
-            
-            # Siti sospetti
+
             file.write(f"\n{'='*50}\nSUSPICIOUS SITES (WARNING)\n{'='*50}\n")
             warning_sites = [addr for addr, data in onions.items() if data.get('security') == 'warning']
             for addr in sorted(warning_sites):
                 file.write(f"{addr}\n")
-            
-            # Siti pericolosi
+
             file.write(f"\n{'='*50}\nDANGEROUS SITES\n{'='*50}\n")
             danger_sites = [addr for addr, data in onions.items() if data.get('security') == 'danger']
             for addr in sorted(danger_sites):
@@ -373,7 +362,7 @@ class Collector:
         for func in [self.ahmia, self.darkfail, self.onionland, self.tortaxi]:
             try:
                 result.update(func())
-                time.sleep(3)  # Maggiore attesa tra le richieste
+                time.sleep(3)
             except Exception as e:
                 Log.warn(f"Scanner {func.__name__} failed: {e}")
                 continue
@@ -399,14 +388,12 @@ class Scanner:
     def init_db(self):
         try:
             c = sqlite3.connect(self.db)
-            
-            # Crea la tabella se non esiste con tutte le colonne necessarie
+
             c.execute('''CREATE TABLE IF NOT EXISTS onions
                          (address TEXT PRIMARY KEY, first TEXT, last TEXT,
                           source TEXT, category TEXT, title TEXT, verified INT,
                           security TEXT, security_reasons TEXT)''')
-            
-            # Verifica se le colonne di sicurezza esistono, altrimenti le aggiunge
+
             cursor = c.execute("PRAGMA table_info(onions)")
             columns = [column[1] for column in cursor.fetchall()]
             
@@ -432,7 +419,7 @@ class Scanner:
             
             for row in cursor:
                 security_reasons = []
-                if row[5]:  # security_reasons
+                if row[5]: 
                     security_reasons = [r.strip() for r in row[5].split(',')]
                 
                 self.known[row[0]] = {
@@ -481,7 +468,6 @@ class Scanner:
             if truly_new:
                 Log.found(f"{len(truly_new)} new onions")
                 for addr, data in truly_new.items():
-                    # Aggiorna statistiche sicurezza
                     security = data.get('security', 'unknown')
                     if security == 'safe':
                         self.stats['safe'] += 1
@@ -493,7 +479,6 @@ class Scanner:
                         self.stats['danger'] += 1
                         Log.danger(f"Dangerous site: {addr}")
                     
-                    # Salva per categoria
                     cat_f = 'all'
                     if data.get('verified'):
                         cat_f = 'verified'
@@ -509,8 +494,7 @@ class Scanner:
                     elif 'service' in cat or 'search' in cat:
                         cat_f = 'services'
                         self.stats['services'] += 1
-                    
-                    # Salva per livello di sicurezza
+
                     security_cat = data.get('security', 'unknown')
                     if security_cat in ['safe', 'warning', 'danger']:
                         self.files.save(data, security_cat)
@@ -560,7 +544,7 @@ class Scanner:
                 self.show_stats()
                 self.stats['uptime'] = str(datetime.now() - self.start).split('.')[0]
                 self.files.stats(self.stats)
-                wait = 300  # 5 minuti per Linux
+                wait = 300 
                 Log.info(f"Next scan in {wait}s...")
                 time.sleep(wait)
                 
