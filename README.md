@@ -1,4 +1,4 @@
-# 🧅 Tor Fresh Onion Scanner Linux 1.0
+# Tor Onion Scanner Linux 1.0
 
 [![Platform](https://img.shields.io/badge/Platform-Linux-yellow.svg)](https://www.linux.org/)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)](https://www.python.org/)
@@ -9,26 +9,26 @@
 > Continuously discovers fresh .onion addresses from clearnet sources.  
 > **No Tor installation required!**
 
-## 🎯 Overview
+## Overview
 
 Tor Fresh Onion Scanner is a powerful Python-based tool that monitors public clearnet sources to discover new .onion addresses in real-time. Designed for security researchers, penetration testers, and cybersecurity enthusiasts working on Linux systems.
 
-### ✨ Key Features
+### Key Features
 
-- 🔍 **24/7 Continuous Monitoring** - Never stops finding new onions
-- 🐧 **Universal Linux Support** - Works on all major distributions
-- 🎨 **Beautiful Terminal UI** - Colorful output with real-time updates
-- 💾 **Smart Organization** - Auto-categorized file structure
-- 📊 **Detailed Analytics** - Daily reports and comprehensive statistics
-- 🚫 **No Tor Required** - Pure clearnet operation
-- ⚡ **Multi-threaded** - Fast and efficient parallel scanning
-- 🗄️ **SQLite Database** - Complete history with SQL query support
-- 🔧 **Systemd Integration** - Run as system service with auto-start
-- 🖥️ **Desktop Integration** - Application menu entry
-- 📡 **Multiple Sources** - Aggregates from 4+ clearnet sources
-- 🔄 **Auto-deduplication** - Smart filtering of duplicate entries
+- **24/7 Continuous Monitoring** - Never stops finding new onions
+- **Universal Linux Support** - Works on all major distributions
+- **Beautiful Terminal UI** - Colorful output with real-time updates
+- **Smart Organization** - Auto-categorized file structure
+- **Detailed Analytics** - Daily reports and comprehensive statistics
+- **No Tor Required** - Pure clearnet operation
+- **Multi-threaded** - Fast and efficient parallel scanning
+- **SQLite Database** - Complete history with SQL query support
+- **Systemd Integration** - Run as system service with auto-start
+- **Desktop Integration** - Application menu entry
+- **Multiple Sources** - Aggregates from 4+ clearnet sources
+- **Auto-deduplication** - Smart filtering of duplicate entries
 
-## 📋 Supported Distributions
+## Supported Distributions
 
 <table>
 <tr>
@@ -68,7 +68,7 @@ Tor Fresh Onion Scanner is a powerful Python-based tool that monitors public cle
 </tr>
 </table>
 
-## 🚀 Installation
+## Installation
 
 ### Quick Install (One-Line)
 
@@ -90,12 +90,12 @@ chmod +x install.sh
 ```
 
 The installer automatically:
-- ✅ Detects your Linux distribution
-- ✅ Installs all required dependencies
-- ✅ Creates scanner directory structure
-- ✅ Sets up systemd service
-- ✅ Configures desktop entry
-- ✅ Initializes database
+- Detects your Linux distribution
+- Installs all required dependencies
+- Creates scanner directory structure
+- Sets up systemd service
+- Configures desktop entry
+- Initializes database
 
 ### Manual Installation
 
@@ -130,7 +130,7 @@ python3 tor_scanner.py
 
 </details>
 
-## 💻 Usage
+## Usage
 
 ### Basic Usage
 
@@ -189,9 +189,9 @@ cp ~/tor_scanner/tor-scanner.desktop ~/.local/share/applications/
 update-desktop-database ~/.local/share/applications/
 ```
 
-Now launch from your application menu! 🚀
+Now launch from your application menu.
 
-## 📂 Directory Structure
+## Directory Structure
 
 ```
 ~/tor_scanner/
@@ -206,7 +206,7 @@ Now launch from your application menu! 🚀
 ├── scanner.pid                 # Process ID (when running)
 ├── scanner.log                 # Log file (background mode)
 │
-└── onion_results/              # ⭐ All results stored here
+└── onion_results/              # All results stored here
     │
     ├── MASTER_LIST.txt         # Complete list of all onions
     │
@@ -231,7 +231,7 @@ Now launch from your application menu! 🚀
         └── stats_2025-01-06.txt
 ```
 
-## 📊 Output Format
+## Output Format
 
 ### MASTER_LIST.txt
 
@@ -262,7 +262,7 @@ Source: Dark.fail
 Category: verified
 Title: Hidden Wiki - Tor Links
 Description: Directory of verified onion sites
-Status: ✓ VERIFIED
+Status: VERIFIED
 ```
 
 ### Statistics Reports
@@ -270,9 +270,9 @@ Status: ✓ VERIFIED
 Daily analytics and metrics:
 
 ```
-╔════════════════════════════════════════════════════════╗
-║            DAILY STATISTICS REPORT                     ║
-╚════════════════════════════════════════════════════════╝
+════════════════════════════════════════════════════════
+            DAILY STATISTICS REPORT
+════════════════════════════════════════════════════════
 
 Generated: 2025-01-06 23:59:59
 
@@ -296,7 +296,7 @@ UPTIME:
   • Average cycle time: 3.6 minutes
 ```
 
-## 🔍 Data Sources
+## Data Sources
 
 The scanner collects .onion addresses from these **public clearnet** sources:
 
@@ -309,7 +309,7 @@ The scanner collects .onion addresses from these **public clearnet** sources:
 
 **Important:** The scanner does NOT connect to actual .onion sites. It only collects publicly listed addresses from clearnet sources.
 
-## 🛠️ Advanced Usage
+## Advanced Usage
 
 ### Database Queries
 
@@ -415,7 +415,7 @@ SELECT address FROM onions WHERE verified=1;
 EOF
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Scan Interval
 
@@ -472,7 +472,7 @@ sources = [
 ]
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Python Not Found
 
@@ -579,9 +579,9 @@ nice -n 10 python3 tor_scanner.py
 cpulimit -l 50 -p $(cat ~/tor_scanner/scanner.pid)
 ```
 
-## 🔒 Security & Privacy
+## Security & Privacy
 
-### ⚠️ Important Disclaimers
+### Important Disclaimers
 
 - This tool operates **entirely on clearnet** (regular internet)
 - **No Tor connection** is made or required
@@ -606,13 +606,13 @@ If you wish to visit discovered .onion sites:
 2. **Use a VPN** before connecting to Tor for additional privacy
 
 3. **Security rules:**
-   - ❌ Never share personal information
-   - ❌ Never download files from untrusted sources
-   - ❌ Never conduct financial transactions
-   - ❌ Never disable security features
-   - ✅ Keep Tor Browser updated
-   - ✅ Use HTTPS when available
-   - ✅ Verify .onion addresses carefully
+   - Never share personal information
+   - Never download files from untrusted sources
+   - Never conduct financial transactions
+   - Never disable security features
+   - Keep Tor Browser updated
+   - Use HTTPS when available
+   - Verify .onion addresses carefully
 
 ### Data Privacy
 
@@ -630,7 +630,7 @@ tar -czf - ~/tor_scanner/onion_results/ | gpg -c > onion_backup.tar.gz.gpg
 srm -r ~/tor_scanner/onion_results/
 ```
 
-## 📈 Monitoring & Statistics
+## Monitoring & Statistics
 
 ### Real-time Monitoring
 
@@ -684,7 +684,7 @@ LIMIT 30;
 EOF
 ```
 
-## 🎯 Performance Optimization
+## Performance Optimization
 
 ### For Servers
 
@@ -746,7 +746,7 @@ self.session.max_redirects = 3
 timeout = 5
 ```
 
-## 🔄 Updates & Maintenance
+## Updates & Maintenance
 
 ### Update Scanner
 
@@ -803,7 +803,7 @@ sudo dnf clean all
 sudo pacman -Sc
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Here's how:
 
@@ -849,13 +849,13 @@ flake8 tor_scanner.py
 mypy tor_scanner.py
 ```
 
-## 📜 License
+## License
 
 **Educational Use Only**
 
 This software is provided for educational and research purposes only. Users are responsible for complying with all applicable laws and regulations in their jurisdiction.
 
-## ⚠️ Legal Notice
+## Legal Notice
 
 - This software does not facilitate illegal activities
 - Only collects publicly available information from clearnet sources
@@ -865,14 +865,14 @@ This software is provided for educational and research purposes only. Users are 
 - Respect website terms of service
 - Do not abuse or overload source websites
 
-## 📞 Support
+## Support
 
 ### Getting Help
 
 1. **Read this README** thoroughly
-2. Check [Troubleshooting](#-troubleshooting) section
-3. Search [existing issues](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/issues/1#issue-3492865332)
-4. Create [new issue](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/issues/new) with:
+2. Check Troubleshooting section
+3. Search existing issues
+4. Create new issue with:
    - Linux distribution and version
    - Python version (`python3 --version`)
    - Complete error message
@@ -903,7 +903,7 @@ curl -I https://dark.fail
 sqlite3 ~/tor_scanner/onion_scanner.db "SELECT COUNT(*) FROM onions;"
 ```
 
-## 🎓 Resources
+## Resources
 
 ### Documentation
 - [Tor Project Official](https://www.torproject.org/)
@@ -923,38 +923,45 @@ sqlite3 ~/tor_scanner/onion_scanner.db "SELECT COUNT(*) FROM onions;"
 - [Ahmia Search](https://ahmia.fi/)
 - [Dark.fail Directory](https://dark.fail/)
 
-## 🌟 Features Roadmap
+## Features Roadmap
 
-- [ ] Web-based dashboard (Flask/FastAPI)
-- [ ] REST API for integrations
-- [ ] Docker containerization
-- [ ] Kubernetes deployment
-- [ ] Elasticsearch integration
-- [ ] Grafana dashboards
-- [ ] Real-time notifications (Email/Telegram)
-- [ ] Machine learning classification
-- [ ] Screenshot capture of clearnet references
-- [ ] Historical trend analysis
-- [ ] Network graph visualization
-- [ ] Multi-language support
-- [ ] Plugin system for custom sources
-- [ ] Automated backup to cloud storage
+- Web-based dashboard (Flask/FastAPI)
+- REST API for integrations
+- Docker containerization
+- Kubernetes deployment
+- Elasticsearch integration
+- Grafana dashboards
+- Real-time notifications (Email/Telegram)
+- Machine learning classification
+- Screenshot capture of clearnet references
+- Historical trend analysis
+- Network graph visualization
+- Multi-language support
+- Plugin system for custom sources
+- Automated backup to cloud storage
 
-## 💡 Tips & Tricks
+## Tips & Tricks
 
 ```bash
-systemctl is-active tor-scanner && echo "✅ Running" || echo "❌ Stopped"
+# Check if service is running
+systemctl is-active tor-scanner && echo "Running" || echo "Stopped"
 
+# Count today's discoveries
 wc -l ~/tor_scanner/onion_results/all_onions/all_$(date +%Y-%m-%d).txt
 
+# Extract addresses only
 grep -oP '[a-z2-7]{56}\.onion' ~/tor_scanner/onion_results/MASTER_LIST.txt > addresses_only.txt
 
+# Find duplicates
 sort ~/tor_scanner/onion_results/MASTER_LIST.txt | uniq -d
 
+# Compare with old list
 diff <(sort old_master.txt) <(sort ~/tor_scanner/onion_results/MASTER_LIST.txt)
 
+# Export verified addresses
 sqlite3 ~/tor_scanner/onion_scanner.db "SELECT address FROM onions WHERE verified=1" > verified.txt
 
+# Generate daily report
 cat <<EOF > daily_report_$(date +%Y-%m-%d).txt
 Daily Onion Scanner Report
 Generated: $(date)
@@ -964,12 +971,14 @@ New today: $(wc -l < ~/tor_scanner/onion_results/all_onions/all_$(date +%Y-%m-%d
 Verified: $(sqlite3 ~/tor_scanner/onion_scanner.db "SELECT COUNT(*) FROM onions WHERE verified=1")
 EOF
 
+# Compress old files
 find ~/tor_scanner/onion_results/ -name "*.txt" -mtime +30 -exec gzip {} \;
 
+# Encrypt master list
 gpg -c ~/tor_scanner/onion_results/MASTER_LIST.txt
 ```
 
-## 📊 Performance Benchmarks
+## Performance Benchmarks
 
 Typical performance on various systems:
 
@@ -982,14 +991,14 @@ Typical performance on various systems:
 
 *Performance varies based on network speed and source availability*
 
-## 🔗 Related Projects
+## Related Projects
 
 - [OnionScan](https://github.com/s-rah/onionscan) - Onion service security scanner
 - [TorBot](https://github.com/DedSecInside/TorBot) - Tor network intelligence tool
 - [Ahmia](https://github.com/ahmia/ahmia-site) - Tor search engine
 - [Fresh Onions](https://github.com/grugq/freshonions-torscraper) - Original onion scraper
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Tor Project for privacy technology
 - Ahmia.fi for public onion indexing
@@ -1001,13 +1010,13 @@ Typical performance on various systems:
 
 <div align="center">
 
-**Made with ❤️ for the Linux & Security Research community**
+**Made with care for the Linux & Security Research community**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/yourusername/tor-scanner)
 [![Issues](https://img.shields.io/github/issues/yourusername/tor-scanner)](https://github.com/yourusername/tor-scanner/issues)
 [![License](https://img.shields.io/badge/License-Educational-orange.svg)]()
 
-**⭐ Star this project if you find it useful!**
+**Star this project if you find it useful**
 
 [Report Bug](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/issues) · [Request Feature](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/issues) · [Documentation](https://github.com/brucelee-1975/Tor_Onion_Scanner_Linux_1.0/wiki)
 
